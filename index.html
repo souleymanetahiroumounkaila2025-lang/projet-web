@@ -53,15 +53,24 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
         <!-- 3. Le Bouton d'action sécurisé pour contrer les bots -->
         <div class="header-action "> <span id="cta-devis-whatsapp " class="CTA ">Demander un devis</span> </div>
     </header>
-    <section class="hero-section " id="accueil ">
+    <section class="hero-section " id="accueil">
+
+
         <!-- Colonne Gauche : Contenu écrit -->
         <div class="hero-content ">
+            <!-- Vidéo en arrière-plan -->
+            <div class="video-bg-container">
+                <!-- Les attributs autoplay, loop, muted et playsinline sont OBLIGATOIRES -->
+
+                <!-- Le voile transparent pour assombrir ou éclaircir le fond -->
+                <div class="video-overlay"></div>
+            </div>
             <h1 class="hero-title ">Votre partenaire pour bâtir une présence digitale professionnelle</h1>
             <p class="hero-description ">Nous concevons des sites modernes des identités visuelles professionnelles et des solutions numériques qui valorisent votre activité.</p>
             <!-- Zone des boutons -->
             <div class="hero-buttons ">
-                <a href="#accueil" data-nav-target="accueil " class="btn btn-primary ">Parlons-en</a>
-                <a href="#contact" data-nav-target="contact " class="btn btn-secondary ">Demarrer un projet</a>
+                <a href="#contact" data-nav-target="contact" class="btn btn-primary ">Parlons-en</a>
+                <a href="#contact" data-nav-target="contact" class="btn btn-secondary ">Demarrer un projet</a>
             </div>
             <!-- Zone des statistiques -->
             <div class="hero-stats ">
@@ -73,7 +82,7 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
         <!-- Colonne Droite : Image et badges -->
         <div class="hero-image-container "> <img src="ordinateureu.png " alt="Créateur " class="hero-image "> </div>
     </section>
-    <section class="services-section " id="services " style="background-color: #ffffff; ">
+    <section class="services-section " id="services" style="background-color: #ffffff; ">
         <div class="container ">
             <!-- En-tête de la section -->
             <div class="services-header reveal ">
@@ -124,7 +133,7 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
         </div>
     </section>
     <!-- ===================================================== SECTION Portfolio ====================================================== -->
-    <section class="portfolio-section " id="portfolio ">
+    <section class="portfolio-section " id="portfolio">
         <div class="container ">
             <div class="portfolio-header reveal ">
                 <h2>Nos réalisations</h2>
@@ -144,7 +153,7 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
                             <span class="tag ">Site vitrine</span>
                             <span class="tag ">Stratégie</span>
                         </div>
-                        <button type="button " class="btn-view-project " id="oryx_button " data-preview="capture_encouragement.png" data-title="Mots d'oryx" data-url="https://site-encouragement.vercel.app/">
+                        <button type="button " class="btn-view-project " id="encouragement_button" data-preview="capture_encouragement.png" data-title="Mots d'oryx" data-url="https://site-encouragement.vercel.app/">
                             Voir le projet <i class="fa-solid fa-arrow-up-right-from-square "></i>
                         </button>
                     </div>
@@ -160,14 +169,14 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
                             <span class="tag ">Design graphique</span>
                             <span class="tag ">Site vitrine</span>
                         </div>
-                        <button type="button " class="btn-view-project " id="escep_button " data-preview="capture.png " data-title="Escep English Club " data-url="https://escep-english-club.vercel.app ">
+                        <button type="button " class="btn-view-project " id="escep_button" data-preview="capture.png " data-title="Escep English Club " data-url="https://escep-english-club.vercel.app ">
                             Voir le projet <i class="fa-solid fa-arrow-up-right-from-square "></i>
                         </button>
                     </div>
                 </article>
                 <article class="portfolio-card reveal reveal-delay-1 ">
                     <div class="portfolio-thumb ">
-                        <img src="capture_oryx.png " alt="Aperçu — Site Oryx ">
+                        <img src="capture_oryx2.png " alt="Aperçu — Site Oryx ">
                     </div>
                     <div class="portfolio-body ">
                         <h3>Site vitrine — Site Oryx</h3>
@@ -176,7 +185,7 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
                             <span class="tag ">Site vitrine</span>
                             <span class="tag ">Stratégie</span>
                         </div>
-                        <button type="button " class="btn-view-project " id="oryx_button " data-preview="capture_oryx.png " data-title="Site Oryx " data-url="index.html ">
+                        <button type="button " class="btn-view-project " id="oryx_button" data-preview="capture_oryx.png " data-title="Site Oryx " data-url="index.html">
                             Voir le projet <i class="fa-solid fa-arrow-up-right-from-square "></i>
                         </button>
                     </div>
@@ -188,7 +197,7 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
 
 
     <!-- ===================================================== SECTION CONTACT ====================================================== -->
-    <section class="contact-section " id="contact " style="background-color: #f8f8f8; ">
+    <section class="contact-section " id="contact" style="background-color: #f8f8f8; ">
         *
 
         <div class="container " class="formulaire ">
@@ -198,11 +207,11 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
                 <div class="col-12 col-lg-6 contact_bloc1 reveal ">
                     <h2>Contactez-nous</h2>
                     <h3 style="color: white; ">Discutons de votre projet</h3>
-                    <p style=" color: #F8F8F8; "> Vous voulez discuter de votre projet, demander un partenariat, demander un devis ou bien contacter le support<br> Parlons-en — réponse sous 24h ouvrées.</p>
+                    <p style=" color: #F8F8F8; "> Vous voulez discuter de votre projet, demander un partenariat, demander un devis ou bien contacter le support technique<br> Parlons-en — réponse sous 24h ouvrées.</p>
 
                     <ul class="contact-list ">
                         <li><i class="fa-solid fa-envelope "></i> contact227.oryx@gmail.com</li>
-                        <li><i class="fa-solid fa-phone input-icon "></i><span id="contact_oryx "></span>
+                        <li><i class="fa-solid fa-phone input-icon "></i><span id="contact_oryx"></span>
                         </li>
                         <li><i class=" fa-solid fa-location-dot "></i> Niamey, Niger</li>
                     </ul>
@@ -349,18 +358,27 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
     </script>
     <script src="oryx-effects.js "></script>
     <script src="portfolio-modal.js "></script>
+    <!-- Ouverture des des sites -->
     <script>
         document.getElementById('escep_button').addEventListener('click', function() {
-            const url = this.getAttribute('data-url');
-            window.open(url, '_blank'); // Ouvre le lien dans un nouvel onglet
+            window.open('https://escep-english-club.vercel.app/', '_blank');
+        });
+    </script>
+
+    <script>
+        document.getElementById('oryx_button').addEventListener('click', function() {
+
+            window.open('index.html', '_blank');
         });
     </script>
     <script>
-        document.getElementById('oryx_button').addEventListener('click', function() {
-            const url = this.getAttribute('data-url');
-            window.open(url, '_blank'); // Ouvre le lien dans un nouvel onglet
+        document.getElementById('encouragement_button').addEventListener('click', function() {
+            // On passe directement l'adresse internet sous forme de texte (chaîne de caractères)
+            window.open('https://site-encouragement.vercel.app/', '_blank');
         });
     </script>
+
+
 
 
 
@@ -391,18 +409,19 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
             conteneur.innerHTML = `<a href="tel:${numeroLien} ">${numeroLisible}</a>`;
         });
     </script>
+
     <script>
         document.getElementById('contactForm').addEventListener('submit', async function(event) {
-            // 1. On empêche le formulaire de recharger la page
+            // 1. On empêche le rechargement de la page
             event.preventDefault();
 
-            // 2. On vérifie si tous les champs requis sont bien remplis
+            // 2. On vérifie si les champs obligatoires (required) sont remplis
             if (!this.checkValidity()) {
-                this.classList.add('was-validated'); // Active les messages d'erreur visuels
-                return; // On arrête l'exécution si le formulaire est invalide
+                this.classList.add('was-validated');
+                return;
             }
 
-            // 3. On récupère les valeurs saisies par l'utilisateur
+            // 3. On récupère les valeurs saisies pour l'API
             const formData = {
                 firstName: document.getElementById('firstName').value,
                 lastName: document.getElementById('lastName').value,
@@ -412,14 +431,14 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
                 message: document.getElementById('message').value
             };
 
-            // 4. Désactivation temporaire du bouton pour éviter les doubles clics
+            // 4. On anime le bouton pendant l'envoi
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerHTML;
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi en cours...';
 
             try {
-                // 5. On envoie les données au backend Vercel (dossier /api/contact)
+                // 5. On envoie les données à votre fichier api/contact.js
                 const response = await fetch('/api/contact', {
                     method: 'POST',
                     headers: {
@@ -430,23 +449,26 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
 
                 const result = await response.json();
 
-                // 6. Traitement de la réponse du serveur
+                // 6. Traitement du succès ou de l'erreur
                 if (result.success) {
-                    alert('Félicitations ! Votre message a bien été traité par le backend Vercel.');
-                    this.reset(); // Vide entièrement le formulaire
-                    this.classList.remove('was-validated'); // Réinitialise l'état visuel des erreurs
+                    alert('Félicitations ! Votre message a bien été envoyé via Vercel.');
+                    this.reset(); // Vide le formulaire
+                    this.classList.remove('was-validated');
                 } else {
-                    alert('Le serveur a rencontré un problème : ' + (result.error || 'Erreur inconnue'));
+                    alert('Erreur serveur : ' + (result.error || 'Inconnue'));
                 }
             } catch (error) {
-                alert('Impossible de contacter le serveur. Vérifiez votre connexion.');
+                alert('Impossible de contacter le serveur. Vérifiez votre connexion Internet.');
             } finally {
-                // 7. On réactive le bouton dans tous les cas
+                // 7. On remet le bouton à son état normal
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
             }
         });
     </script>
+</body>
+
+</html>
 
 
 </body>
