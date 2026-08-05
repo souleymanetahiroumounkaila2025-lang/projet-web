@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.oryx-niger.com/sitemap.xml
+Sitemap: https://agence-oryx.vercel.app/sitemap.xml
