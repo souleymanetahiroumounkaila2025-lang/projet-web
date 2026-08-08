@@ -15,8 +15,9 @@
     <header class="main-header">
         <div class="logo"> <img src="oryx_2_logo.png" style="height: 80px; width: 80px; border-radius: 40px; border: 2px solid #F1f1f1"> </div> <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu">     <i class="fa-solid fa-bars"></i>   </button>
         <nav class="navigation">
-            <ul class="nav-links" style="list-style: none;">
-                <li><span id="cta_devis_whatsapp_mobile" class="CTA-mobile" style="color: #12058abd;">Demander un devis</span></li>
+            <ul class="nav-links ">
+                <li class="nav-cta-mobile ">
+                    <span id="cta_devis_whatsapp_mobile" class="CTA-mobile" style="color: #12058abd; ">Demander un devis</span></li>
                 <li><a href="index.html#accueil">Accueil</a></li>
                 <li><a href="index.html#services">Services</a></li>
                 <li><a href="index.html#portfolio">Portfolio</a></li>
@@ -24,7 +25,7 @@
             </ul>
         </nav>
         <!-- 3. Le Bouton d'action sécurisé pour contrer les bots -->
-        <div class="header-action"> <span id="cta-devis-whatsapp" class="CTA">Demander un devis</span> </div>
+        <div class="header-action "> <span id="cta_devis_whatsapp" class="CTA">Demander un devis</span> </div>
     </header>
     <!-- ===================================================== 1. ACCROCHE ====================================================== -->
     <section class="about-hero reveal">
@@ -143,11 +144,11 @@
     </script>
     <script>
         window.addEventListener('DOMContentLoaded', () => {
-            const indicatifPays = " 227 ";
-            const partie1 = "81 ";
-            const partie2 = "08 ";
-            const partie3 = "39 ";
-            const partie4 = "51 ";
+            const indicatifPays = "227";
+            const partie1 = "81";
+            const partie2 = "08";
+            const partie3 = "39";
+            const partie4 = "51";
             const message = "Bonjour M. le CEO de la marque Oryx, je souhaite obtenir un devis pour mon projet Merci! ";
             const messageEncode = encodeURIComponent(message);
             const lienWhatsappDevis = `https://wa.me/${indicatifPays}${partie1}${partie2}${partie3}${partie4}?text=${messageEncode}`;
