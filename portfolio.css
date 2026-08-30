@@ -1,0 +1,212 @@
+/* Réinitialisation de base */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+/* Section principale */
+
+.portfolio-section2 {
+    background-color: #12058abd;
+    /* Fond bleu foncé identique à l'image */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+
+/* Titre de la section */
+
+.section-title {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* Grille Responsive Intelligente */
+
+.portfolio-grid {
+    display: grid;
+    /* Crée autant de colonnes de 200px que possible, s'adapte automatiquement */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    /* Espace entre les vignettes */
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+
+/* Conteneur individuel d'image */
+
+.grid-item {
+    position: relative;
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    /* Force un ratio carré (1:1) pour harmoniser les différents formats */
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+
+/* Gestion de la bannière large (dernière ligne du screen) */
+
+
+/* Si l'écran est assez grand, cet élément prendra 2 colonnes ou plus */
+
+.grid-item.wide {
+    grid-column: span 2;
+    aspect-ratio: 2 / 1;
+    /* Ratio plus large */
+}
+
+
+/* Effet au survol */
+
+.grid-item:hover {
+    transform: translateY(-5px);
+}
+
+
+/* L'élément Magique CSS pour l'adaptation de l'image */
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Recadre l'image proprement sans l'écraser */
+    object-position: center;
+    /* Centre le contenu de l'image */
+    display: block;
+}
+
+
+/* Bouton "Obtenir un devis" */
+
+.action-container {
+    margin-top: 30px;
+}
+
+.btn-devis {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #001f4d;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-devis:hover {
+    background-color: #ff6600;
+    /* Changement de couleur au survol */
+    color: #fff;
+}
+
+
+/* Ajustements pour les très petits écrans (Smartphones) */
+
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+    }
+    .grid-item.wide {
+        grid-column: span 1;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+
+/* Style de la boîte modale (Arrière-plan) */
+
+.modal {
+    display: none;
+    /* Caché par défaut */
+    position: fixed;
+    z-index: 1000;
+    /* Passe au-dessus de tout le reste */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Fond noir transparent */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+/* Classe activée en JS pour afficher la modale avec transition */
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+
+/* L'image agrandie */
+
+.modal-content {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    /* L'image garde ses proportions sans être coupée */
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.3s ease;
+}
+
+
+/* Bouton de fermeture (la croix) */
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-modal:hover {
+    color: #ff6600;
+    /* Changement de couleur au survol */
+}
+
+
+/* Animation d'ouverture fluide */
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Curseur sur les images de la grille pour indiquer qu'elles sont cliquables */
+
+.grid-item img {
+    cursor: pointer;
+}

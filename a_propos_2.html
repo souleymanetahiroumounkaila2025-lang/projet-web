@@ -9,9 +9,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="a_propos_2.css">
     <link rel="stylesheet" href="oryx-effects.css">
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-55G65H72');
+    </script>
+    <!-- End Google Tag Manager -->
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55G65H72 "
+height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header class="main-header">
         <div class="logo"> <img src="oryx_2_logo.png" style="height: 80px; width: 80px; border-radius: 40px; border: 2px solid #F1f1f1"> </div> <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu">     <i class="fa-solid fa-bars"></i>   </button>
         <nav class="navigation">
@@ -149,21 +171,22 @@
             const partie2 = "08";
             const partie3 = "39";
             const partie4 = "51";
-            const message = "Bonjour M. le CEO de la marque Oryx, je souhaite obtenir un devis pour mon projet Merci! ";
+            const message = "Bonjour M. le CEO Oryx, je souhaite obtenir un devis pour mon projet Merci! ";
             const messageEncode = encodeURIComponent(message);
-            const lienWhatsappDevis = `https://wa.me/${indicatifPays}${partie1}${partie2}${partie3}${partie4}?text=${messageEncode}`;
-
+            const lienWhatsappDevis = `https://wa.me/+${indicatifPays}${partie1}${partie2}${partie3}${partie4}?text=${messageEncode}`;
             // Injection du bouton dans le site version desktop   
-            const conteneur1 = document.getElementById('cta-devis-whatsapp');
-            if (conteneur1) {
-                conteneur1.innerHTML = `<a href="${lienWhatsappDevis} " target="_blank " class="btn-devis ">Demander un devis</a>`;
+            const conteneur = document.getElementById('cta_devis_whatsapp');
+            if (conteneur) {
+                conteneur.innerHTML = `<a href="${lienWhatsappDevis} " target="_blank " class="btn-devis ">Demander un devis</a>`;
+
             }
             // Injection du bouton dans le menu mobile 
-            const conteneur2 = document.getElementById('cta_devis_whatsapp_mobile');
-            if (conteneur2) {
-                conteneur2.innerHTML = `<a href="${lienWhatsappDevis} " target="_blank " class="btn-devis ">Demander un devis</a>`;
-                cta_devis_whatsapp_mobile.style.backgroundColor = "#4e73df";
+            const conteneurMobile = document.getElementById('cta_devis_whatsapp_mobile');
+            if (conteneurMobile) {
+                conteneurMobile.innerHTML = `<a href="${lienWhatsappDevis} " target="_blank " class="btn-devis ">Demander un devis</a>`;
+                cta_devis_whatsapp_mobile.style.backgroundColor = "#4e73df ";
             }
+
 
         });
     </script>
