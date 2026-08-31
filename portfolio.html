@@ -37,9 +37,9 @@
 height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header class="main-header ">
-        <!-- 1. Le Logo / Nom -->
+
         <div class="logo "> <img style="height: 80px; width: 80px; border-radius: 40px; border: 2px solid #F1f1f1 " src="oryx_2_logo.png " alt="Logo Oryx "> </div>
-        <!-- Bouton menu burger (mobile uniquement) --><button class="burger " id="burgerBtn" aria-label="Ouvrir le menu ">     <i class="fa-solid fa-bars "></i>   </button>
+        <!-- Bouton menu burger (mobile uniquement) --><button class="burger" id="burgerBtn" aria-label="Ouvrir le menu ">     <i class="fa-solid fa-bars "></i>   </button>
         <!-- 2. La Liste de Navigation -->
         <nav class="navigation ">
             <ul class="nav-links ">
@@ -53,9 +53,9 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
             </ul>
         </nav>
         <!-- 3. Le Bouton d'action sécurisé pour contrer les bots -->
-        <div class="header-action "> <span id="cta_devis_whatsapp" class="CTA ">Demander un devis</span> </div>
+        <div class="header-action "> <span id="cta_devis_whatsapp" class="CTA">Demander un devis</span> </div>
     </header>
-    <section class="portfolio-section " id="portfolio">
+    <section class=" portfolio-section " id="portfolio ">
         <div class="container ">
             <div class="portfolio-header reveal ">
                 <h2>Nos réalisations</h2>
@@ -74,7 +74,7 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
                         <div class="tags ">
                             <span class="tag ">Microsite UX/Interaction</span>
                         </div>
-                        <button type="button " class="btn-view-project " id="encouragement_button" data-preview="capture_encouragement.png " data-title="Mots d 'oryx" data-url="https://site-encouragement.vercel.app ">
+                        <button type="button " class="btn-view-project " id="encouragement_button " data-preview="capture_encouragement.png " data-title="Mots d 'oryx" data-url="https://site-encouragement.vercel.app ">
                             Voir le projet <i class=" fa-solid fa-arrow-up-right-from-square "></i>
                         </button>
                     </div>
@@ -278,9 +278,9 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             // Découpage du numéro en 3 parties
-            const ind = "227 ";
-            const milieu = "98 43 ";
-            const fin = "15 29 ";
+            const ind = "227";
+            const milieu = "98 43";
+            const fin = "15 29";
 
             // Reliage des trois paries du numro
             const numeroLisible = `${ind} ${milieu} ${fin}`;
@@ -291,6 +291,40 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
             conteneur.innerHTML = `<a href="tel:${numeroLien} ">${numeroLisible}</a>`;
         });
     </script>
+    <script>
+        // Ouverture / fermeture du menu burger           
+        const burgerBtn = document.getElementById('burgerBtn');
+        const navLinks = document.querySelector('.nav-links');
+        if (burgerBtn && navLinks) {
+            burgerBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('open');
+            });
+            // Ferme le menu automatiquement quand on clique sur un lien 
+            navLinks.querySelectorAll('a, span').forEach(el => {
+                el.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                });
+            });
+
+        }
+
+        const icon = burgerBtn.querySelector('i');
+
+        burgerBtn.addEventListener('click', () => {
+            // Alterne la classe pour l'animation CSS
+            burgerBtn.classList.toggle('open');
+
+            // Alterne l'icône Font Awesome entre les barres et la croix
+            if (burgerBtn.classList.contains('open')) {
+                icon.classList.replace('fa-bars', 'fa-xmark');
+                burgerBtn.setAttribute('aria-label', 'Fermer le menu');
+            } else {
+                icon.classList.replace('fa-xmark', 'fa-bars');
+                burgerBtn.setAttribute('aria-label', 'Ouvrir le menu');
+            }
+        });
+    </script>
+
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             const indicatifPays = "227";
@@ -311,12 +345,13 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
             const conteneurMobile = document.getElementById('cta_devis_whatsapp_mobile');
             if (conteneurMobile) {
                 conteneurMobile.innerHTML = `<a href="${lienWhatsappDevis} " target="_blank " class="btn-devis ">Demander un devis</a>`;
-                cta_devis_whatsapp_mobile.style.backgroundColor = "#4e73df ";
+                cta_devis_whatsapp_mobile.style.backgroundColor = "#4e73df"
             }
 
 
         });
     </script>
+    <script defer src="/_vercel/insights/script.js "></script>
 </body>
 
 </html>

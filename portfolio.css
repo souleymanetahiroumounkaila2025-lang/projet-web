@@ -91,31 +91,7 @@ body {
     display: block;
 }
 
-
-/* Bouton "Obtenir un devis" */
-
-.action-container {
-    margin-top: 30px;
-}
-
-.btn-devis {
-    display: inline-block;
-    background-color: #ffffff;
-    color: #001f4d;
-    padding: 12px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 25px;
-    transition: background 0.3s, color 0.3s;
-}
-
-.btn-devis:hover {
-    background-color: #ff6600;
-    /* Changement de couleur au survol */
-    color: #fff;
-}
-
-
+/
 /* Ajustements pour les très petits écrans (Smartphones) */
 
 @media (max-width: 480px) {
