@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section Réalisations - Format Réseaux Sociaux</title>
+    
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- VARIABLES DE DESIGN --- */
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #121212;
+            --accent-gold: #d4af37;
+            --text-light: #ffffff;
+            --text-muted: #8a8a8a;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+            --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-sans);
+            padding: 80px 0;
+        }
+
+        .studio-section {
+            max-width: 1200px; /* Réduit pour garder des proportions harmonieuses */
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* En-tête */
+        .studio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 60px;
+            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 30px;
+        }
+
+        .header-title h2 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 400;
+        }
+
+        .header-title h2 span {
+            font-style: italic;
+            color: var(--accent-gold);
+        }
+
+        .header-title p {
+            color: var(--text-muted);
+            margin-top: 15px;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* Filtres */
+        .filter-controls {
+            display: flex;
+            gap: 15px;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid #222;
+            color: var(--text-muted);
+            padding: 10px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--accent-gold);
+            color: var(--text-light);
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+
+        /* --- GRILLE DE SÉLECTION (STYLE INSTAGRAM / FACEBOOK GRID) --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            position: relative;
+            background-color: var(--bg-card);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-smooth);
+        }
+
+        /* Répartition asymétrique des publications */
+        .grid-w-8 { grid-column: span 8; }
+        .grid-w-4 { grid-column: span 4; }
+
+        /* --- CONTENEUR CARRÉ PARFAIT (RATIO 1:1 FACEBOOK POST) --- */
+        .card-media {
+            width: 100%;
+            position: relative;
+            aspect-ratio: 1 / 1; /* Force le format carré strict peu importe la largeur */
+            overflow: hidden;
+        }
+
+        .card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+            filter: grayscale(20%) brightness(0.9);
+        }
+
+        /* Description sous le post */
+        .card-info {
+            padding: 20px 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .info-text h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .info-text span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Bouton d'action interactif */
+        .arrow-link {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #222;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .arrow-link svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+            transition: var(--transition-smooth);
+        }
+
+        /* --- INTERACTIONS HOVER --- */
+        .portfolio-card:hover .card-media img {
+            transform: scale(1.03);
+            filter: grayscale(0%) brightness(1);
+        }
+
+        .portfolio-card:hover .arrow-link {
+            background-color: var(--text-light);
+            color: var(--bg-dark);
+            border-color: var(--text-light);
+        }
+
+        .portfolio-card:hover .arrow-link svg {
+            transform: rotate(45deg);
+        }
+
+        /* Gestion de l'affichage des filtres */
+        .portfolio-card.fade-out {
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 900px) {
+            .studio-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 25px;
+            }
+            .grid-w-8, .grid-w-4 {
+                grid-column: span 12; /* Tout passe à 100% de large sur mobile tout en restant carré */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="studio-section">
+        
+        <div class="studio-header">
+            <div class="header-title">
+                <h2>Le Lookbook <span>Social</span></h2>
+                <p>Découvrez nos créations exclusives au format de nos publications et inspirations quotidiennes.</p>
+            </div>
+            
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">Tout</button>
+                <button class="filter-btn" data-filter="dubai">Dubaï</button>
+                <button class="filter-btn" data-filter="casual">Casual</button>
+            </div>
+        </div>
+
+        <div class="portfolio-grid">
+
+            <!-- Publication 1 (Grand format carré sur la grille) -->
+            <div class="portfolio-card grid-w-8" data-category="dubai">
+                <div class="card-media">
+                    <img src="https://unsplash.com" alt="Abaya Dubaï">
+                </div>
+                <div class="card-info">
+                    <div class="info-text">
+                        <h3>L'Abaya Perlée Émiratie</h3>
+                        <span>@votre-marque • 1080 × 1080 px</span>
+                    </div>
+                    <a href="#" class="arrow-link">
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Publication 2 (Petit format carré sur la grille) -->
+            <div class="portfolio-card grid-w-4" data-category="casual">
+                <div class="card-media">
+                    <img src="https://unsplash.com" alt="Kimono Lin">
+                </div>
+                <div class="card-info">
+                    <div class="info-text">
+                        <h3>Le Kimono Casual en Lin</h3>
+                        <span>@votre-marque • 1080 × 1080 px</span>
+                    </div>
+                    <a href="#" class="arrow-link">
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Publication 3 (Petit format carré) -->
+            <div class="portfolio-card grid-w-4" data-category="dubai">
+                <div class="card-media">
+                    <img src="https://unsplash.com" alt="Soie de Médine">
+                </div>
+                <div class="card-info">
+                    <div class="info-text">
+                        <h3>Abaya Soie de Médine</h3>
+                        <span>@votre-marque • 1080 × 1080 px</span>
+                    </div>
+                    <a href="#" class="arrow-link">
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Publication 4 (Grand format carré) -->
+            <div class="portfolio-card grid-w-8" data-category="casual">
+                <div class="card-media">
+                    <img src="https://unsplash.com" alt="Nouvelle collection">
+                </div>
