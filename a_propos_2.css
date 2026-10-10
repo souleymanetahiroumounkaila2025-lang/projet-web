@@ -93,7 +93,11 @@
     justify-content: space-between;
     padding: 20px 10%;
     font-family: 'Arial', sans-serif;
-    background: #12058abd;
+    background-image: url('fond8.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .nav-links {
@@ -143,6 +147,23 @@
     display: none;
 }
 
+#cta_devis_whatsapp a,
+#cta_devis_whatsapp_mobile a {
+    color: #ffffff !important;
+    /* Force le texte en blanc pur */
+    text-decoration: none !important;
+    /* Supprime le soulignement non professionnel */
+    display: block !important;
+    width: 100%;
+    text-align: center;
+}
+
+#cta_devis_whatsapp a:hover,
+#cta_devis_whatsapp_mobile a:hover {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
 .burger {
     display: none;
     background: none;
@@ -167,7 +188,11 @@
 }
 
 .about-hero {
-    background: linear-gradient(155deg, #12058abd 0%, #1a0f4d 100%);
+    background-image: url('fond8.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: whitesmoke;
     padding: 100px 10% 80px;
     text-align: center;
@@ -251,6 +276,13 @@
     border-radius: 16px;
     padding: 1.75rem 1.25rem;
     transition: transform 0.25s ease, boxshadow 0.25s ease;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.795);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 14, 0.062);
+    padding: 30px;
+    background-color: rgba(255, 254, 254, 0.055);
 }
 
 .value-card:hover {
@@ -278,7 +310,11 @@
 }
 
 .philosophy-section {
-    background: #12058abd;
+    background-image: url('fond8.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: whitesmoke;
     padding: 80px 10%;
     text-align: center;
@@ -342,7 +378,11 @@
 /* =========================================== ========== Footer =========================================== ========== */
 
 footer.site-footer {
-    background-color: var(--bleu-marine);
+    background-image: url('fond8.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: rgba(245, 245, 245, 0.85);
 }
 

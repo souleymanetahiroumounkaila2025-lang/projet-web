@@ -359,21 +359,64 @@ height="0 " width="0 " style="display:none;visibility:hidden "></iframe></noscri
             const partie4 = "51";
             const message = "Bonjour M. le CEO Oryx, je souhaite obtenir un devis pour mon projet Merci! ";
             const messageEncode = encodeURIComponent(message);
+
+
             const lienWhatsappDevis = `https://wa.me/+${indicatifPays}${partie1}${partie2}${partie3}${partie4}?text=${messageEncode}`;
-            // Injection du bouton dans le site version desktop   
+
+            // ==========================================
+            // CONFIGURATION DES BOUTONS (Fonction réutilisable)
+            // ==========================================
+            function appliquerEffetGlace(element) {
+                if (!element) return;
+
+
+                element.style.backgroundColor = "rgba(255, 255, 255, 0.35)";
+                element.style.color = "white";
+                element.style.backdropFilter = "blur(20px)";
+                element.style.webkitBackdropFilter = "blur(20px)";
+                element.style.border = "1px solid rgba(255, 255, 255, 0.25)";
+                element.style.boxShadow = "0 8px 32px 0 rgba(0, 0, 0, 0.1)";
+                element.style.listStyle = "none";
+                element.style.transition = "all 0.3s ease"; // Ajout pour la fluidité des animations
+
+                // Événement Hover (Entrée de la souris)
+                element.addEventListener("mouseenter", () => {
+                    element.style.backgroundColor = "rgba(255, 255, 255, 0.25)";
+                    element.style.backdropFilter = "blur(30px)";
+                    element.style.webkitBackdropFilter = "blur(30px)";
+                    element.style.boxShadow = "0 12px 40px 0 rgba(0, 0, 0, 0.2)";
+                    element.style.transform = "scale(1.03)";
+                });
+
+                // Événement Hover (Sortie de la souris)
+                element.addEventListener("mouseleave", () => {
+                    element.style.backgroundColor = "rgba(255, 255, 255, 0.55)";
+                    element.style.backdropFilter = "blur(20px)";
+                    element.style.webkitBackdropFilter = "blur(20px)";
+                    element.style.boxShadow = "0 8px 32px 0 rgba(0, 0, 0, 0.1)";
+                    element.style.transform = "scale(1)";
+                });
+            }
+
+            // ==========================================
+            // INJECTION VERSION DESKTOP
+            // ==========================================
             const conteneur = document.getElementById('cta_devis_whatsapp');
             if (conteneur) {
-                conteneur.innerHTML = `<a href="${lienWhatsappDevis} " target="_blank " class="btn-devis ">Demander un devis</a>`;
+                conteneur.innerHTML = `<a href="${lienWhatsappDevis}" target="_blank" class="btn-devis">Demander un devis</a>`;
+                appliquerEffetGlace(conteneur);
 
             }
-            // Injection du bouton dans le menu mobile 
+
+            // ==========================================
+            // INJECTION VERSION MOBILE
+            // ==========================================
             const conteneurMobile = document.getElementById('cta_devis_whatsapp_mobile');
             if (conteneurMobile) {
-                conteneurMobile.innerHTML = `<a href="${lienWhatsappDevis} " target="_blank " class="btn-devis ">Demander un devis</a>`;
-                cta_devis_whatsapp_mobile.style.backgroundColor = "#4e73df"
+                conteneurMobile.innerHTML = `<a href="${lienWhatsappDevis}" target="_blank" class="btn-devis">Demander un devis</a>`;
+                appliquerEffetGlace(conteneurMobile);
+
             }
-
-
         });
     </script>
     <script defer src="/_vercel/insights/script.js "></script>
