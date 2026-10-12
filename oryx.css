@@ -178,10 +178,7 @@ html {
 #cta_devis_whatsapp a,
 #cta_devis_whatsapp_mobile a {
     color: #ffffff !important;
-    /* Force le texte en blanc pur */
     text-decoration: none !important;
-    /* Supprime le soulignement non professionnel */
-    display: block !important;
     width: 100%;
     text-align: center;
 }
